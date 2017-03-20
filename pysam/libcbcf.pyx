@@ -1704,7 +1704,7 @@ cdef class VariantHeaderContigs(object):
         if id in self:
             raise ValueError('Header already exists for contig {}'.format(id))
 
-        items = [('ID', id)] + kwargs.items()
+        items = [('ID', id)] + list(kwargs.items())
         self.header.add_meta('contig', items=items)
 
 
